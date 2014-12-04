@@ -1,0 +1,121 @@
+<html>
+<head>
+<style type="text/css">
+.asterisk_input:before {
+content:"*"; 
+color: #e32;
+position: absolute; 
+margin: 0px 0px 0px 0px; 
+font-size: xx-large; 
+padding: 0 3px 0 0; }
+
+.mandatory {
+    color: #555;
+}
+.mandatory:after {
+   /* Empty content, but required for pseudo element to display */
+   content: "*";
+
+   /* Size of star within sprite */
+    vertical-align: top;
+    margin-right: -4px;
+    font-size: 20 px;
+    color: #d35400;
+}
+</style>
+<style type="text/css">
+#container {
+    width:100%;
+    height:200px;
+}
+#one {
+    width:40%;
+    height:400px;
+    top: 60px;
+    float:right;
+    background-image:url('images/nano.jpg');
+    background-repeat: no-repeat;
+
+}
+
+#two {
+    width:60%;
+    height:200px;
+    float:left;
+   
+}
+
+</style>
+<script language="javascript" src="/src/calender.js"></script>
+<script language="javascript">
+  var calMakeYear = new Calender('calMakeYear', 2014, 0);
+  calMakeYear.init();
+
+</script>
+<style type="text/css">
+fieldset {
+  font-size:12px;
+  padding:10px;
+  width:700px;
+  line-height:1.8;}
+
+
+</style>
+</head>
+<body><u><h1><img src="images/logo.jpg" width="100">Sell Your Car</h1></u>
+
+
+<div id="container">
+    <div id="one">
+<br>
+    </div>
+    
+   
+
+  <div id="two">
+  
+<form action="sells.php" method="post">
+
+<table>
+<fieldset>
+<legend><strong>Vehicle Details</strong></legend>
+  <label class="mandatory">Car Details  :</label> &nbsp;&nbsp;&nbsp;
+  
+  <input type="text" name="brand" placeholder="Car Brand" required/> &nbsp;&nbsp;<input type="text" name="model" Placeholder="Model" required/>
+<br><br>
+<label class="mandatory">Car  Year  :</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="text" name="dat" pattern="[1-31]{2}" placeholder="Date Of Issue">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="month" pattern="[1-12]{2}" placeholder="Month">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="year" pattern="[1980-2014]{4}" placeholder="year purchase" required/>
+  
+<br><br>
+<label class="mandatory"> Car City :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="city" placeholder="Name of City" required><br><br>
+
+<label class="mandatory">Your Car :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="file" name="upload" placeholder="Car Image" required>
+<br><br>
+<label class="mandatory"> Expected Price:</label><label>(<img src="images/rs.png">)</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="price" placeholder="Your Price" required>
+</fieldset>
+
+<fieldset>
+<legend><strong>Contact Details</strong></legend>
+<label class="mandatory">Name : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" placeholder="Your Name" required>
+<br><br><label class ="mandatory">
+Email :
+</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="email" name="email" placeholder="Email id" required>
+<br><br>
+<label>Mobile Number :</label>
+<input type="text" name="phone"  pattern="[789][0-9]{9}" placeholder="Your Contact Number" required>
+<br><br>
+<label>Alternate Number</label>
+<input type="text" name="altnum" placeholder="Other contact">
+</fieldset><br><center>
+<input type="submit" name="submit" value="Sell your car">
+</center>
+
+
+</table>
+
+</form>
+
